@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPL Match Updates</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            background: #0b1c3f;
+            color: white;
+        }
+
+        header {
+            background: #ffcc00;
+            color: black;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+
+        nav {
+            background: #142a5c;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #ffcc00;
+        }
+
+        .container {
+            padding: 20px;
+        }
+
+        .match-card {
+            background: #1c3c7a;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 10px;
+        }
+
+        .teams {
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        .time {
+            margin-top: 8px;
+            color: #ffcc00;
+        }
+
+        footer {
+            text-align: center;
+            padding: 10px;
+            background: #142a5c;
+            margin-top: 20px;
+        }
+
+        button {
+            background: #ffcc00;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    🏏 IPL 2026 Match Updates
+</header>
+
+<nav>
+    <a href="#">Home</a>
+    <a href="#">Matches</a>
+    <a href="#">Teams</a>
+    <a href="#">Contact</a>
+</nav>
+
+<div class="container">
+
+    <h2>Upcoming Matches</h2>
+
+    <div id="matches"></div>
+
+    <button onclick="loadMatches()">Load Matches</button>
+
+</div>
+
+<footer>
+    © 2026 IPL Info Website | Created for Content Creation
+</footer>
+
+<script>
+    function loadMatches() {
+        const matches = [
+            {
+                teams: "Mumbai Indians vs Chennai Super Kings",
+                date: "March 25, 2026",
+                time: "7:30 PM IST",
+                venue: "Wankhede Stadium"
+            },
+            {
+                teams: "RCB vs Kolkata Knight Riders",
+                date: "March 26, 2026",
+                time: "7:30 PM IST",
+                venue: "Chinnaswamy Stadium"
+            },
+            {
+                teams: "Delhi Capitals vs Rajasthan Royals",
+                date: "March 27, 2026",
+                time: "3:30 PM IST",
+                venue: "Arun Jaitley Stadium"
+            }
+        ];
+
+        const container = document.getElementById("matches");
+        container.innerHTML = "";
+
+        matches.forEach(match => {
+            const card = document.createElement("div");
+            card.className = "match-card";
+
+            card.innerHTML = `
+                <div class="teams">${match.teams}</div>
+                <div class="time">${match.date} | ${match.time}</div>
+                <div>Venue: ${match.venue}</div>
+            `;
+
+            container.appendChild(card);
+        });
+    }
+</script>
+
+</body>
+</html>
